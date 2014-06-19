@@ -121,6 +121,55 @@ if ($is_foo && $is_bar) {
 
 ```
 
+In order to maximize the **bias towards clarity** value, it's encouraged to keep those conditional expressions that depend on multiple conditions (being *multiple* more than one) on a boolean method. 
+
+So, something like this:
+
+```php
+<?php
+    if ($date->before(self::SUMMER_START) || $date->before(self::SUMMER_END) {
+        $charge = $quantity * $this->winterRate + $this->winterServiceCharge;
+    } else {
+        $charge = $quantity * $this->summerRate;
+    }
+?>
+```
+
+Can be converted into:
+
+```php
+<?php
+    if ($this->notSummer($date) {
+        $charge = $this->winterRate($quantity);
+    } else {
+        $charge = $this->summerRate($quantity);
+    }
+?>
+```
+Of course, the multiline formatting proposed before would apply too in the extracted method:
+
+```php
+<?php
+    private function notSummer($date) {
+        return $date->before(self::SUMMER_START)
+            || $date->before(self::SUMMER_END)
+        ;
+    }
+?>
+```
+
+Another way to make conditionals even clearer are by avoiding the **if not / else** form into a *positive* if conditional. The example code, by applying that, would be:
+
+```php
+<?php
+    if($this->isSummer($date)) {
+        $charge = $this->summerRate($quantity);
+    } else {
+        $charge = $this->winterRate($quantity);
+    }
+?>
+```
+
 ##Ternary operators
 The same rule as for if clauses also applies for the ternary operator:
  It may be split onto several lines, keeping the question mark and the colon at
