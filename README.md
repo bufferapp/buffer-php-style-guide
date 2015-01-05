@@ -34,32 +34,38 @@ Here is an example if statement, since it is the most complicated of them:
 
 ```php
 <?php
-if ((condition1) || (condition2)) {
+if ((condition1) || (condition2))
+{
     action1;
-} elseif ((condition3) && (condition4)) {
+}
+elseif ((condition3) && (condition4))
+{
     action2;
-} else {
+}
+else
+{
     defaultaction;
 }
 ?>
 ```
-Control statements should have one space between the control keyword and opening parenthesis, to distinguish them from function calls.
+Control statements should have one space between the control keyword and opening parenthesis, to distinguish them from function calls. Curly braces should be used on new lines.
 You are strongly encouraged to always use curly braces even in situations where they are technically optional. Having them increases readability and decreases the likelihood of logic errors being introduced when new lines are added.
 For switch statements:
 ```php
 <?php
-switch (condition) {
-case 1:
-    action1;
-    break;
+switch (condition)
+{
+  case 1:
+      action1;
+      break;
 
-case 2:
-    action2;
-    break;
+  case 2:
+      action2;
+      break;
 
-default:
-    defaultaction;
-    break;
+  default:
+      defaultaction;
+      break;
 }
 ?>
 
@@ -84,7 +90,8 @@ if (($condition1
     || $condition2)
     && $condition3
     && $condition4
-) {
+)
+{
     //code here
 }
 ?>
@@ -97,7 +104,8 @@ The first condition may be aligned to the others.
 if (   $condition1
     || $condition2
     || $condition3
-) {
+)
+{
     //code here
 }
 ?>
@@ -114,7 +122,8 @@ splitting the condition sets into smaller, better understandable chunks:
 
 $is_foo = ($condition1 || $condition2);
 $is_bar = ($condition3 && $condtion4);
-if ($is_foo && $is_bar) {
+if ($is_foo && $is_bar)
+{
     // ....
 }
 ?>
@@ -127,9 +136,12 @@ So, something like this:
 
 ```php
 <?php
-    if ($date->before(self::SUMMER_START) || $date->before(self::SUMMER_END) {
+    if ($date->before(self::SUMMER_START) || $date->before(self::SUMMER_END)
+    {
         $charge = $quantity * $this->winterRate + $this->winterServiceCharge;
-    } else {
+    }
+    else
+    {
         $charge = $quantity * $this->summerRate;
     }
 ?>
@@ -139,9 +151,12 @@ Can be converted into:
 
 ```php
 <?php
-    if ($this->notSummer($date) {
+    if ($this->notSummer($date)
+    {
         $charge = $this->winterRate($quantity);
-    } else {
+    }
+    else
+    {
         $charge = $this->summerRate($quantity);
     }
 ?>
@@ -162,9 +177,12 @@ Another way to make conditionals even clearer are by avoiding the **if not / els
 
 ```php
 <?php
-    if($this->isSummer($date)) {
+    if($this->isSummer($date))
+    {
         $charge = $this->summerRate($quantity);
-    } else {
+    }
+    else
+    {
         $charge = $this->winterRate($quantity);
     }
 ?>
