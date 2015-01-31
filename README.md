@@ -136,7 +136,7 @@ So, something like this:
 
 ```php
 <?php
-    if ($date->before(self::SUMMER_START) || $date->before(self::SUMMER_END)
+    if ($date->before(self::SUMMER_START) || $date->before(self::SUMMER_END))
     {
         $charge = $quantity * $this->winterRate + $this->winterServiceCharge;
     }
@@ -151,7 +151,7 @@ Can be converted into:
 
 ```php
 <?php
-    if ($this->notSummer($date)
+    if ($this->notSummer($date))
     {
         $charge = $this->winterRate($quantity);
     }
