@@ -1,7 +1,54 @@
-# Buffer PHP Style Guide
+Buffer PHP Coding Style Guide (in progress)
+==================
+Our PHP coding guide very much derived from [PSR-2](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-2-coding-style-guide.md). We follow PSR-2 coding standard.
 
-*Very much a work in progress :)*
+The goal of this guide is to make our code more consistent and improve code readability.
 
+1. Overview and Important Points
+-----------
+- Code MUST use 4 spaces for indenting, not tabs.
+
+- Opening braces for classes/methods MUST go on the next line, and closing braces MUST
+  go on the next line after the body.
+
+- Camel case for classes and methods. E.g. `class SampleClassName` and `public function getTeamMembers()`
+
+- Camel case for all instance, global and local variables, properties defined within the class or file.
+
+- Exceptions are json endpoint method names. Use *underscore* pattern for those method names..
+    - This is a way to keep our api urls consistent with industry standards and also a way to differentiate endpoint methods from regular ones. e.g. `GET profiles/{id}/influencers/engagements.json` routes to `public function influencers_engagements() {}` method.
+
+### 1.1. Example
+
+Here is an example snippet that illustrates the main points above.
+
+```php
+<?php
+namespace Vendor\Package;
+
+use FooInterface;
+use BarClass as Bar;
+use OtherVendor\OtherPackage\BazClass;
+
+class Foo extends Bar implements FooInterface
+{
+    public function sampleFunction($a, $b = null)
+    {
+        if ($a === $b) {
+            bar();
+        } elseif ($a > $b) {
+            $foo->bar($arg1);
+        } else {
+            BazClass::bar($arg2, $arg3);
+        }
+    }
+
+    final public static function bar()
+    {
+        // method body
+    }
+}
+```
 ## Goal
 
 To establish more consistency and readability across the Buffer team and our
