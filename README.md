@@ -11,12 +11,15 @@ The goal of this guide is to make our code more consistent and improve code read
 - Opening braces for classes/methods MUST go on the next line, and closing braces MUST
   go on the next line after the body.
 
+- New controllers and models are also CamelCase. E.g. `InteractionsController.php`.
+
 - Camel case for classes and methods. E.g. `class SampleClassName` and `public function getTeamMembers()`
 
 - Camel case for all instance, global and local variables, properties defined within the class or file.
 
-- Exceptions are json endpoint method names. Use *underscore* pattern for those method names..
-    - This is a way to keep our api urls consistent with industry standards and also a way to differentiate endpoint methods from regular ones. e.g. `GET profiles/{id}/influencers/engagements.json` routes to `public function influencers_engagements() {}` method.
+- Exceptions are json endpoints. Use *underscore* pattern for naming json endpoint methods.
+    - This is a way to keep our api urls consistent with industry standards and also a way to differentiate endpoints from regular methods. e.g. `GET profiles/{id}/influencers/engagements.json` routes to `public function influencers_engagements() {}` method.
+  
 
 ### 1.1. Example
 
