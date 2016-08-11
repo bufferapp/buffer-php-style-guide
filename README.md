@@ -17,10 +17,6 @@ The goal of this guide is to make our code more consistent and improve code read
 
 - Camel case for all instance, global and local variables, properties defined within the class or file.
 
-- Exceptions are json endpoints. Use *underscore* pattern for naming json endpoint methods.
-    - This is a way to keep our api urls consistent with industry standards and also a way to differentiate endpoints from regular methods. e.g. `GET profiles/{id}/influencers/engagements.json` routes to `public function influencers_engagements() {}` method.
-  
-
 ### 1.1. Example
 
 Here is an example snippet that illustrates the main points above.
