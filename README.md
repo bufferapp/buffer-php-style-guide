@@ -11,7 +11,7 @@ The goal of this guide is to make our code more consistent and improve code read
 - Opening braces for classes/methods MUST go to the next line, and closing braces MUST
   go on the next line after the body.
 
-- New controllers and models are also CamelCase. E.g. `InteractionsController.php`.
+- New controllers and models are always CapFirst. The first letter is always capital E.g. `InteractionsController.php`.
 
 - Camel case for classes and methods. E.g. `class SampleClassName` and `public function getTeamMembers()`
 
@@ -78,8 +78,7 @@ Here is an example if statement, since it is the most complicated of them:
 <?php
 if (condition1 || (condition2) {
     action1;
-}
-elseif (condition3 && condition4) {
+} elseif (condition3 && condition4) {
     action2;
 } else {
     defaultaction;
