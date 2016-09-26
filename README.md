@@ -13,7 +13,7 @@ The goal of this guide is to make our code more consistent and improve code read
 
 - New controllers and models are always CapFirst. The first letter is always capital E.g. `InteractionsController.php`.
 
-- Camel case for classes and methods. E.g. `class SampleClassName` and `public function getTeamMembers()`
+- Camel case for classes and methods, with class names always capitalized. E.g. `class SampleClassName` and `public function getTeamMembers()`
 
 - Camel case for all instance, global and local variables, properties defined within the class or file.
 
